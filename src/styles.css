@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+/* h1, h2, h3, h4 {
+  margin: 1.414em 0 .5em;
+  font-weight: inherit;
+  line-height: 1.2;
+font-family: Arial, Helvetica, sans-serif;
+} */
+
+/* body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
+/* Global font setup */
+body {
+  font-family: 'Nunito', sans-serif;
+  color: #1e293b; /* neutral dark blue-gray for clean readability */
+  line-height: 1.6;
+  /* background-color: #f9fafb; */
+  background-color: rgba(197, 245, 245, 0.651);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  color: #111827; /* slightly darker for emphasis */
+  letter-spacing: -0.5px;
+  margin-bottom: 0.5rem;
+}
+/* Paragraphs & content text */
+p, span, button, div {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+}
+
+/* Optional - nicer button text */
+button {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}

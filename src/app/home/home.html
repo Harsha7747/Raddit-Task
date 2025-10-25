@@ -1,0 +1,54 @@
+<div class="container-fluid">
+  @if (loading()) {
+  <!-- <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div> -->
+  <app-test></app-test>
+  }
+  @else{
+  <div class="container">
+    <div class="row text-center text-info">
+      <h1 class="mt-4 text-info">HARSHA VARDHAN GUMPARTHI</h1>
+      <h3 class="mb-4 text-info">Reddit Posts Viewer</h3>
+      <div class="d-flex  justify-content-around align-items-center mb-4 flex-column flex-md-row">
+        <div><span>Email </span>:harshavardhangumparthi@gmail.com</div>
+        <div><span>Mobile:</span>6301077726</div>
+      </div>
+
+      @for (item of data(); track $index) {
+      <div class="col-sm-6 col-md-4 col-lg-3  g-3 my-5 text-start" style="gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));">
+        <div class="card h-100 p-3 " >
+          <div class="card-body">
+            <div class="card-title mb-3" (click)="openLink(item.url)" style="cursor: pointer;">
+              <h6 style="color: #0c5cb3fd;">{{clean(item.title)}}</h6>
+            </div>
+            <!-- {{item.score}} -->
+            <!-- <p class="card-text" [class.collapse]="!expanded" >{{cleanHtmlText(item.selftext_html)}}</p> -->
+            <div class="text" [class.expanded]="expanded === $index" #textElement
+              [innerHTML]="getformattedText(item.selftext_html)">
+              <!-- {{cleanHtmlText(item.selftext_html)}} -->
+
+            </div>
+            <!-- <span (click)="toggle()">{{!expanded ? 'show more' :'show less'}} </span> -->
+            <span class="more"style="cursor: pointer;" *ngIf="getformattedText(item.selftext_html).length > 215" (click)="toggle($index)"> {{
+              expanded === $index ? 'Show less' : 'Show more' }} </span>
+          </div>
+          <div class="card-footer">
+            <div>
+              Score: {{item.score}}
+            </div>
+            <div>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+
+
+
+    </div>
+  </div>}
+</div>

@@ -6,6 +6,9 @@ import { Observable } from 'rxjs';
 })
 export class Cardserv {
   constructor(private http:HttpClient){}
+
+
+  
   getData():Observable<Cardserv[]> {
     // return this.http.get<Cardserv[]>('https://www.reddit.com/r/Angular2.json');
     return this.http.get<Cardserv[]>('https://oauth.reddit.com/r/Angular2.json');
